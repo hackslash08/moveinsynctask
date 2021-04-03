@@ -160,6 +160,7 @@ this.searchn=event.target.value;
         this.availableSlots = this.slots.length;
         this.moneyCollected = this.moneyCollected + 20;
         this.checkColors();
+        this.dataCopy=[...this.finalData]
       }
     }
   }
@@ -225,6 +226,7 @@ this.searchn=event.target.value;
         date: new Date()
       });
       this.finalData.push(newObj);
+      this.dataCopy=[...this.finalData]
       this.slots.splice(0, 1);
       this.addCarData = false;
       this.availableSlots = this.slots.length;
