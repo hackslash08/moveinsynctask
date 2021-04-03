@@ -1,0 +1,122 @@
+<div>
+  <span class="textHeader">Total Parking Slots:</span
+  ><span class="numbers">{{ places }}</span
+  ><br />
+  <span class="textHeader">Available Parking Slots:</span
+  ><span class="numbers">{{ availableSlots }}</span>
+</div>
+
+<div style="float: right">
+  <span *ngIf="collected" style="margin-right: 10px;
+  font-size: 1.1em;
+  font-weight: bold;"> You have collected Rs.{{moneyCollected}}</span>
+  <button class="query" (click)="queryData()">Query Data</button>
+  <button class="park" (click)="addCar()">Park A Car</button>
+</div>
+<br />
+<br />
+<br />
+
+
+<div style="float: right">
+  <input
+  id="searchn"
+    type="text"
+    class="input-box"
+    name="searchPlate"
+    placeholder="Search Number Plate"
+    (change)="search($event,'searchPlate')"
+  />
+  <select
+  id="searchc"
+    style="width: 100px;
+            height: 36px;
+            margin-left: 15px;"
+    name="searchColor"
+    (change)="search1($event,'searchColor')"
+  >
+    <option defaultValue>Select Color</option>
+    <ng-container *ngFor="let colors of uniqueColors">
+            <option>{{colors}}</option>
+    </ng-container>
+    
+  </select>
+  <button class="search" (click)="finalSearch()">Search</button>
+  <button class="search" (click)="reset()">Reset</button>
+</div>
+
+<div *ngIf="addCarData">
+  <p class="textHeader">Add a Car</p>
+
+  <div class="">
+    <div class="row">
+      <div class="col-lg-4">
+        <label for="license" style="margin-right: 25px">
+          License Plate Number
+        </label>
+        <input
+          id="license"
+          name="license"
+          type="text"
+          class="input-box"
+          (blur)="inputValuess($event, 'license')"
+          formControlName="color"
+        />
+      </div>
+      <br />
+      <div class="col-lg-4">
+        <label for="color" style="margin-right: 125px">
+          Color
+        </label>
+        <input
+          id="color"
+          name="color"
+          type="text"
+          class="input-box"
+          (blur)="inputValuess($event, 'color')"
+        />
+      </div>
+    </div>
+    <button (click)="submitt()" class="submit-btn">Add</button>
+  </div>
+</div>
+
+<div>
+  <table class="table1">
+    <tr>
+      <th class="tableHeader">#</th>
+      <th class="tableHeader">Car Number</th>
+      <th class="tableHeader">Color</th>
+      <th class="tableHeader">Slot No</th>
+      <th class="tableHeader">Date Time</th>
+      <th class="tableHeader">Release Slot</th>
+    </tr>
+    <ng-container *ngFor="let cars of finalData; let i = index">
+      <tr>
+        <td class="tableData">
+          <span style="margin-left:60%">{{ i + 1 }}</span>
+        </td>
+        <td class="tableData">
+          <span style="margin-left:30%">{{ cars.number }}</span>
+        </td>
+        <td class="tableData">
+          <span style="margin-left:49%">{{ cars.color }}</span>
+        </td>
+        <td class="tableData">
+          <span style="margin-left:60%">{{ cars.slot }}</span>
+        </td>
+        <td class="tableData">
+          <span style="margin-left:3%">{{ cars.date }}</span>
+        </td>
+        <td class="tableData">
+          <button
+            (click)="removeItem(cars)"
+            style="margin-left:40%; background-color: #ffe000; color:black; border:2px solid #ffe000; font-size: 0.9em; border-radius: 1px; cursor: pointer;"
+          >
+            Remove
+          </button>
+        </td>
+      </tr>
+    </ng-container>
+  </table>
+</div>

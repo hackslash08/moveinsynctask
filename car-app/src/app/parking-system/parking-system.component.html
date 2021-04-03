@@ -1,0 +1,43 @@
+<div *ngIf="!componentChange">
+  <form style="width: 100%; margin: auto ">
+    <div class="">
+      <div class="row">
+        <div class="col-lg-4">
+          <label for="places" style="margin-right: 25px">
+            Number of Parking Places
+          </label>
+          <input
+            id="places"
+            name="places"
+            type="number"
+            class="input-box"
+            (blur)="inputValues($event,'places')"
+            formControlName="nameQuote"
+          />
+        </div>
+        <br/>   
+        <div class="col-lg-4">
+          <label for="carsParked" style="margin-right: 40px">
+            Number of Cars Parked
+          </label>
+          <input
+            id="carsParked"
+            name="carsParked"
+            type="number"
+            class="input-box"
+            (blur)="inputValues($event,'carsParked')"
+            formControlName="customerName"
+          />
+        </div>
+      </div>
+      <button (click)="submit()" class="submit-btn">Submit</button>
+      
+    </div>
+  </form>
+</div>
+<ng-container *ngIf="componentChange">
+    <app-parking-table [carsParked]="carsParked" [places]="places"></app-parking-table>
+
+  </ng-container>
+
+

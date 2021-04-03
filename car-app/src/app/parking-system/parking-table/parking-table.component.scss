@@ -1,0 +1,84 @@
+.textHeader{
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.numbers{
+    font-size: 1.4em;
+    color: red;
+}
+.tableHeader{
+    padding-left: 50px;
+    padding-right: 60px;
+    font-size: 1.2em;
+    border: 0.8px solid grey;
+    color:white;
+    background-color: #000000d6;
+    font-weight: 400;
+    // width:60px;
+    width:18%
+}
+.tableData{
+    // padding-left: 50px;
+    padding-right: 60px;
+    font-size: 1.2em;
+    border: 0.8px solid grey;
+    color:black;
+    background-color: white;
+    font-weight: 300;
+    // width:60px;
+    width:18%
+}
+.table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.table1{
+    // border: 1px solid black;
+    margin: 4%;
+    // padding: 20px;
+}
+.input-box{
+    
+    width: 300px;
+    height: 30px;
+
+}
+.search{
+    cursor: pointer;
+    width: 150px;
+    height: 35px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: grey;
+    border: 0.2px solid grey;
+    color: white;
+}
+.submit-btn{
+    width: 300px;
+    height: 30px;
+    margin: 60px;
+    background-color: #1976d2;
+    color: white;
+    font-size: 1.2em;
+}
+
+.park{
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #ff0000cc;
+    border: 0.2px solid #ff0000cc;
+    color: white;
+}
+.query{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #15a915;
+    border: 0.2px solid #15a915;
+    color: white;
+    margin-right:10px;
+}
